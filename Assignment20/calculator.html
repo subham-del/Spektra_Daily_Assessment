@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h3{
+            font-family: 'Courier New , Courier, monospace';
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="number" id="num1" placeholder="Enter 1st number"/>
+        <input type="number" id="num2" placeholder="Enter 2nd number" />
+        <button onclick="handledata()">Add</button>
+        <button onclick="handledata()">Minus</button>
+        <button onclick="handledata()">Mul</button>
+        <button onclick="handledata()">Divison</button>
+        <h3 id="res"></h3>
+    </div>
+
+    <script>
+        function handledata() {
+            var val1 = Number(document.getElementById("num1").value)
+            var val2 = Number(document.getElementById("num2").value)
+            switch (window.event.target.innerText) {
+                case "Add":
+                    document.getElementById("res").innerText = `Sum of ${val1} and ${val2} is: ${val1 + val2}`
+                    break;
+                case "Minus":
+                    document.getElementById("res").innerText = `Subtraction of ${val1} and ${val2} is: ${val1 - val2}`
+                    break;
+                case "Mul":
+                    document.getElementById("res").innerText = `Multiplication of ${val1} and ${val2} is: ${val1 * val2}`
+                    break;
+                case "Divison":
+                    document.getElementById("res").innerText = `Divison of ${val1} and ${val2} is: ${val1 / val2}`
+                    break;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

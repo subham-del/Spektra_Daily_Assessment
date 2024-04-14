@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div>
+        <input id="num1" type="number" placeholder="Enter 1st Number" />
+        <br />
+        <br />
+        <input id="num2" type="number" placeholder="Enter 2nd Number" />
+        <br />
+        <br />
+        <input type="button" onclick="handledata(event)" value="Multiply" />
+        <input type="button" onclick="handledata(event)" value="Divide" />
+        <h4 id="res"></h4>
+    </div>
+
+
+    <script>
+        function handledata(e) {
+            var val1 = document.getElementById("num1").value
+            var val2 = document.getElementById("num2").value
+            switch (e.target.value) {
+                case "Multiply":
+                    document.getElementById("res").innerText = `Multiplication of ${val1} and ${val2} is: ${val1 * val2}`
+                    break;
+                case "Divide":
+                    document.getElementById("res").innerText = `Divison of ${val1} and ${val2} is: ${val1 / val2}`
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

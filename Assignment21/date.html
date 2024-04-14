@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4 id="res"></h4>
+    <script>
+        var txt = ""
+        for(var tmp = 2014;tmp<=2050;tmp++){
+            var d = new Date(`Jan 1,${tmp}`);
+            if(d.getDay()==0)
+                txt = `${txt} 1st january is being a sunday ${tmp}\n`
+            document.getElementById("res").innerText = txt
+        }
+    </script>
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

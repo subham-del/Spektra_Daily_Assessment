@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 17vw;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+        }
+
+        #btn{
+            width: 100%;
+            height: 4vh;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform" onsubmit="event.preventDefault(); handleform()">
+        <div>
+            <label>Name</label>
+            <input id="fullname" type="text" />
+        </div>
+        <div>
+            <label>Email</label>  
+            <input id="mail" type="text" />
+        </div>
+        <div>
+            <label>Password</label>
+            <input id="pswd" type="password" />
+        </div>
+        <input id="btn" type="submit" />
+    </form>
+
+    <script>
+        function handleform(e) {
+
+            var name = document.getElementById("fullname").value
+            var mail = document.getElementById("mail").value
+            var pswd = document.getElementById("pswd").value
+
+            if (name == "" || mail == "" || pswd == '') {
+                alert("please fill the required fields")
+            }
+            else {
+                if (pswd.length < 8 || mail.search("@")==-1 || name.match("\\d")) {
+                    if (name.match("\\d"))
+                        alert("name cannot contain numbers")
+                    else if (mail.search("@")==-1)
+                        alert("please fill your email properly")
+                    else if (pswd.length < 8)
+                        alert("password must contain at least 8 characters")
+                    
+                }
+                else {
+                    window.location.href = "welcome.html"
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input {
+            margin-right: 5px;
+            width: 20vw;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div>
+        <input id="arrdata" type="text" placeholder="Enter the array elemets separated by comma"/>
+        <button onclick="handledata()">calculate</button>
+    </div>
+    <h4 id="datasum"></h4>
+    <h4 id="dataavg"></h4>
+    <h4 id="datagrade"></h4>
+    <script>
+        function handledata() {
+
+            var userdata = document.getElementById("arrdata").value.toString()
+            var arr = userdata.split(",");
+            var len = arr.length
+            var sum = 0;
+            var avg = 0;
+            var percent = 0;
+            for (var tmp = 0; tmp < len; tmp++) {
+                sum = sum + Number(arr[tmp])
+            }
+
+            avg = sum / len
+            percent = (avg / 100) * 100
+            document.getElementById("datasum").innerText = "Sum of " + userdata + " is: " + sum
+            document.getElementById("dataavg").innerText = "average of " + userdata + " is " + avg
+            if (percent >= 0 && percent <= 70)
+                document.getElementById("datagrade").innerText = "Grade is D"
+            else if (percent >= 71 && percent <= 80)
+                document.getElementById("datagrade").innerText = "Grade is C"
+            else if (percent >= 81 && percent <= 90)
+                document.getElementById("datagrade").innerText = "Grade is B"
+            else if (percent >= 91 && percent <= 100)
+                document.getElementById("datagrade").innerText = "Grade is A"
+        }
+    </script>
+</body>
+
+</html>
