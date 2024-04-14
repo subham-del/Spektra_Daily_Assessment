@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .text-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .field-ele{
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        #btn{
+            height: 35px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Survey</h2>
+    <form style="display: flex;flex-direction:column;gap:5px;width:30%">
+        <div class="text-fields">
+            <label>First Name</label>
+            <input class="field-ele" type="text" name="fullName" placeholder="ex: subham" /><br />
+        </div>
+        <div class="text-fields">
+            <label>Date</label>
+            <input class="field-ele" type="date" name="date" required/><br />
+        </div>
+        <div class="text-fields">
+            <label>Age</label>
+            <input class="field-ele" type="number" name="age" placeholder="ex: 12" /><br />
+        </div>
+        <div class="text-fields">
+            <label>Which option best describes your current role?</label>
+            <select class="field-ele">
+                <option value='Senior Software Engineer'>Senior Software Engineer</option>
+                <option value='Junior Software Engineer'>Junior Software Engineer</option>
+                <option value='Full Stack Web Developer'>Full Stack Web Developer</option>
+                <option value='Front-end Web Developer'>Front-end Web Developer</option>
+            </select>
+        </div>
+        <br/>
+        <div>
+            <label>Would you recommend Web Development carrer to a friend or family</label>
+            <input type="radio" name="opinion"/> Definately
+            <input type="radio" name="opinion"/>Maybe
+            <input type="radio" name="opinion"/>Not sure
+        </div>
+       <br/>
+        <input id="btn" type="submit" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #outer-div{
+            display: flex;
+            background-color: aliceblue;
+            gap: 20px;
+        }
+        img{
+            border-radius: 100%;
+        }
+        .vl {
+            border-left: 1px solid green;
+          }
+        #info{
+            display: flex;
+            flex-direction: column;
+            gap: 0px;
+            justify-content: start;
+            align-items: start;
+        }
+        .profile{
+            font-size: 30px;
+            font-weight: bolder;
+            margin-bottom: 0px;
+            line-height: 0%;
+        }
+        .profiletext{
+            line-height:0%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer-div">
+        <div>
+            <img src="profile_pic.png" width="250" height="250"/>
+        </div>
+        <div class="vl"></div>
+        <div id="info">
+            <p class="profile">Subham Nahak</p>
+            <p>WEB DESIGNER/ DEVELOPER</p>
+            <p class="profiletext">Passionate software engineer with a strong foundation in full-stack development, specializing in web applications and mobile solutions.</p>
+            <p class="profiletext">phone: +91 9692078582</p>
+            <p class="profiletext">Email: nsubham162@gmail.com</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Interests</h2>
+            <ul>
+                <li>Design</li>
+                <li>Programming</li>
+                <li>Drawing</li>
+                <li>Photography</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Skills</h2>
+            <ul>
+                <li>Java</li>
+                <li>React</li>
+                <li>Nodejs</li>
+                <li>Javascript</li>
+                <li>flutter</li>
+            </ul>
+        </div>
+        <div>
+            <h2>Projects</h2>
+            <hr>
+            <h3>File Format Converter</h3>
+            <ul>
+                <li>JA file format converter is a software tool or service designed to convert files from one format to another. This conversion process allows users to transform files into different formats that may be more compatible with specific software applications, devices, or platforms</li>
+            </ul>
+            <h3>Videocall application</h3>
+            <ul>
+                <li>A video call application, also known as a video conferencing application, is a software platform that enables users to engage in real-time audio and video communication over the internet. These applications facilitate face-to-face communication between individuals or groups located in different geographical locations, allowing them to connect, collaborate, and interact as if they were in the same physical space</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
