@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #success-msg {
+            display: none;
+            position: absolute;
+            top: 70%;
+            width: 20%;
+            text-align: center;
+        }
+
+        #register {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 30vh;
+            gap: 12px;
+            border: 1px solid black;
+
+        }
+
+        #body {
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+
+            gap: 20px;
+
+        }
+
+        .text-fields {
+            height: 30px;
+            width: 500px;
+            border-radius: 5px;
+            outline: none;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body id="body">
+
+    <div style="width:20%;text-align:center;">
+        <h2>Registration Form</h2>
+    </div>
+    <div>
+        <form method="post" id="register">
+            <label>Name:</label>
+            <input name="fullName" class="text-fields" id="name" type="text" placeholder="Full Name" required />
+            <label>Email:</label>
+            <input name="mail" class="text-fields" id="mail" type="email" placeholder="Email" required />
+            <label>Password:</label>
+            <input name="pswd" class="text-fields" id="pswd" type="Password" placeholder="Password" />
+            <label>Phone Number:</label>
+            <input name="phone" class="text-fields" id="phone" type="number" placeholder="Phone Number" />
+            <label>Courses:</label>
+            <div>
+                <input type="checkbox" name="course" value="Python" />Python
+                <input type="checkbox" name="course" value="C" />C
+                <input type="checkbox" name="course" value="Java" />Java
+                <input type="checkbox" name="course" value="Javascript" />Javascript
+            </div>
+            <label>DOB:</label>
+            <input class="text-fields" type="date" placeholder="Date of Birth" />
+            <label>Choose any File:</label>
+            <input id="file" type="file" />
+            <label>Choose any colour:</label>
+            <input id="colour" type="color" placeholder="Colour" />
+            <label>Gender:</label>
+            <div>
+                <input type="radio" name="gender" value="Male" />Male
+                <input type="radio" name="gender" value="Female" />Female
+            </div>
+            <label>Rate your expertise:</label>
+            <input type="range" />
+            <label>Department:</label>
+            <select id="dropdown">
+                <option value="ISE">ISE</option>
+                <option value="CSE">CSE</option>
+                <option value="EEE">EEE</option>
+                <option value="AIML">AIML</option>
+            </select>
+            <label>Address:</label>
+            <textarea name="address" id="address" placeholder="Address"></textarea>
+            <div>
+                <button
+                    style="width: 125px;color:white;background-color:#007bff;border:none;outline:none;border-radius:5px;height:30px"
+                    id="btn">submit</button>
+                <input
+                    style="width: 125px;color:white;background-color:#007bff;border:none;outline:none;border-radius:5px;height:30px"
+                    type="reset" />
+            </div>
+        </form>
+    </div>
+
+
+
+    <div id="success-msg">form submitted successfully</div>
+    <script>
+        document.getElementById("btn").addEventListener("click", (e) => {
+           
+            let fullName = document.getElementById("name").value
+            let email = document.getElementById("mail").value
+            let pswd = document.getElementById("pswd").value
+            let phone = document.getElementById("phone").value
+            let address = document.getElementById("address").value
+            let date = document.getElementById("date").value
+            let ele = document.getElementsByName('gender');
+            let ele1 = document.getElementsByName('course');
+            let course = ""
+
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked)
+                    localStorage.setItem("gender", ele[i].value)
+            }
+            for (i = 0; i < ele1.length; i++) {
+                if (ele1[i].checked)
+                    course = course + ele1[i].value
+
+            }
+
+            if (!(fullName == '' || email == '')) {
+
+                alert(fullName + " your form submitted successfully")
+                localStorage.setItem("fullName", fullName)
+                localStorage.setItem("mail", email)
+                localStorage.setItem("pswd", pswd)
+                localStorage.setItem("phone", phone)
+                localStorage.setItem("address", address)
+                localStorage.setItem("Department", document.getElementById("dropdown").value)
+                localStorage.setItem("course", course)
+                localStorage.setItem("date", date)
+
+                window.location.href = "info.html"
+            }
+        })
+    </script>
+
+</body>
+
+</html>
